@@ -1,2 +1,28 @@
 # azure-vm-webapp-activedirectory
-Example of how to enable Active Directory authentication on a web application hosted in an Azure VM
+
+---
+
+| Page Type | Languages     | Services |
+|-----------|-----------|------------|
+| Sample    | PowerShell, C#    | TODO |
+
+---
+
+# Enable Active Directory Authentication on a web application hosted on an Azure VM
+
+This sample codebase demonstrates TODO
+
+## Prerequisite Tools
+- TODO
+
+## Running this sample
+
+### _*Setting Up the Cloud Infrastructure*_
+#### TODO
+- TODO
+
+## Limitations/Considerations
+- TODO
+
+## Resources
+- TODO
