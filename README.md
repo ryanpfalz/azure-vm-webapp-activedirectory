@@ -10,7 +10,7 @@
 
 # Enable Active Directory Authentication on a web application hosted on an Azure VM
 
-This sample codebase demonstrates how to host a web application on an Azure Virtual Machine and authenticate users to it using Azure Active Directory.
+This sample codebase demonstrates how to host a web application on an Azure Virtual Machine and authenticate users to it using Azure Active Directory via an app registration.
 
 ## Prerequisite Tools
 - [Azure PowerShell](https://learn.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-8.3.0) (for setting up infrastructure via a script)
