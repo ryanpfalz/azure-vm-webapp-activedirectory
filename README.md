@@ -2,9 +2,9 @@
 
 ---
 
-| Page Type | Languages     | Services |
+| Page Type | Languages & Frameworks     | Services |
 |-----------|-----------|------------|
-| Sample    | PowerShell, C#    | TODO |
+| Sample    | PowerShell, C#, ASP.NET    | TODO |
 
 ---
 
