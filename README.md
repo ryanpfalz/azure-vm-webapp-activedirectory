@@ -4,7 +4,7 @@
 
 | Page Type | Languages & Frameworks     | Services |
 |-----------|-----------|------------|
-| Sample    | PowerShell, C#, ASP.NET    | Virtual Machine<br>Key Vault<br>Active Directory |
+| Sample    | PowerShell<br>C#<br>JavaScript<br>ASP.NET    | Virtual Machine<br>Key Vault<br>Active Directory |
 
 ---
 
@@ -35,7 +35,7 @@ This sample codebase demonstrates how to host a web application on an Azure Virt
 2. Add the FQDN of the VM as a [Redirect URI](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-redirect-uri) in the newly created app registration.
 3. On the Quickstart blade, download the [quickstart codebase](https://learn.microsoft.com/en-us/azure/active-directory/develop/reference-v2-libraries) that aligns to your requirements.
     - This project leverages the ASP.NET framework. Codebases for other frameworks (e.g., Java, Node, etc.) are available.
-    - The application settings of the quickstart codebase will be preconfigured to reference the credentials of the app registration you created, which the app code will use to authenticate via Azure AD. If you leverage the code in this repository, you will need to update the ```ClientId``` in the ```app\AppModelv2-WebApp-OpenIDConnect-DotNet\Web.config``` file.
+    - The application settings of the quickstart codebase will be preconfigured to reference the credentials of the app registration you created, which the app code will use to authenticate via Azure AD. If you leverage the code in this repository, you will need to update the ```ClientId``` in the ```app/AppModelv2-WebApp-OpenIDConnect-DotNet/Web.config``` file.
 4. Install the codebase's dependencies and publish the codebase on the VM.
     - This may be done by setting up a development environment on the VM, or [through a more advanced DevOps setup](https://devblogs.microsoft.com/premier-developer/using-azure-devops-to-deploy-web-applications-to-virtual-machines/).
 5. Serve the application via a web server technology (this project uses IIS).
