@@ -19,7 +19,7 @@ This sample codebase demonstrates how to host a web application on an Azure Virt
 
 ### _*Setting Up the Azure Resources*_
 #### The core infrastructure needs to be set up before an application can be published and registered with AD services.
-1.  To begin, replace the variables with your desired resource names and run the commands in the script found at ```infra/config.ps1```. The script contains Azure PowerShell commands that set up a resource group, key vault, and virtual machine. Additional commands create an self-signed certificate, load it into the Key Vault, and install IIS on the VM.
+1.  To begin, replace the variables with your desired resource names and run the commands in the script found at ```infra/config.ps1```. The script contains Azure PowerShell commands that set up a resource group, key vault, and virtual machine. Additional commands create a self-signed certificate, load it into the Key Vault, and install IIS on the VM.
     - This script closely follows the commands laid out in [this tutorial](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-secure-web-server).
     - Please note that the cloud infrastructure can be manually provisioned in the Azure Portal; using ```infra/config.ps1``` is completely optional.
     - You may implement your preferred web server technology - this sample uses IIS throughout.
