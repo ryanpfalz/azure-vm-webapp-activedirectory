@@ -22,6 +22,7 @@ This sample codebase demonstrates how to host a web application on an Azure Virt
 1.  To begin, replace the variables with your desired resource names and run the commands in the script found at ```infra/config.ps1```. The script contains Azure PowerShell commands that set up a resource group, key vault, and virtual machine. Additional commands create an self-signed certificate, load it into the Key Vault, and install IIS on the VM.
     - This script closely follows the commands laid out in [this tutorial](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-secure-web-server).
     - Please note that the cloud infrastructure can be manually provisioned in the Azure Portal; using ```infra/config.ps1``` is completely optional.
+    - You may implement your preferred web server technology - this sample uses IIS throughout.
 
 2. [Create a rule in the Network Security Group](https://learn.microsoft.com/en-us/azure/virtual-network/manage-network-security-group#work-with-security-rules) (which was automatically created with the VM in Step 1) to allow inbound traffic on Port 443 (HTTPS).
 
@@ -37,12 +38,14 @@ This sample codebase demonstrates how to host a web application on an Azure Virt
     - The application settings of the quickstart codebase will be preconfigured to reference the credentials of the app registration you created, which the app code will use to authenticate via Azure AD. 
 4. Install the codebase's dependencies and publish the codebase on the VM.
     - This may be done by setting up a development environment on the VM, or [through a more advanced DevOps setup](https://devblogs.microsoft.com/premier-developer/using-azure-devops-to-deploy-web-applications-to-virtual-machines/).
-5. Serve the application via a web server technology. This project uses IIS.
+5. Serve the application via a web server technology (this project uses IIS).
     - In IIS, a [new website should be created](https://learn.microsoft.com/en-us/iis/get-started/getting-started-with-iis/create-a-web-site) and pointed to the root directory of the application published in Step 4.
     - Create an [SSL binding by adding the self-signed certificate](https://learn.microsoft.com/en-us/iis/manage/configuring-security/how-to-set-up-ssl-on-iis#create-an-ssl-binding-1) generated above to the new website you just created. The hostname should be set as the FQDN of the VM.
     - You may need to grant permissions to the [IIS_IUSR](https://learn.microsoft.com/en-us/troubleshoot/developer/webapps/iis/www-authentication-authorization/understanding-identities#iusr---anonymous-authentication) user to access public areas of the website.
 6. [Test the application](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-secure-web-server#test-the-secure-web-app) by navigating to ```https://<FQDN of your VM>```. If you used a self-signed certificate, you'll need to accept the security warning. 
 
+### _*Application Architecture*_
+![Architecture](/docs/images/diagram.png)
 
 ## Limitations/Considerations
 - While the general premise will be compatible, the details of _"Publishing the Application"_ may differ slightly if a framework other than ASP.NET is chosen.
