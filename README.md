@@ -47,11 +47,18 @@ This sample codebase demonstrates how to host a web application on an Azure Virt
 ### _*Application Architecture*_
 ![Architecture](/docs/images/diagram.png)
 
-## Limitations/Considerations
-- While the general premise will be compatible, the details of _"Publishing the Application"_ may differ slightly if a framework other than ASP.NET is chosen.
+## Security Considerations
+- To restrict application access and further improve security, you may consider implementing additional measures such as:
+    - Adding restriction rules on the [Network Security Group](https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview) (e.g., to the IP range of your corporate VPN).
+    - Implement a [Web Application Firewall](https://learn.microsoft.com/en-us/azure/web-application-firewall/overview) via [App Gateway](https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/ag-overview) or [Azure Front Door](https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview) to protect against exploits and vulnerabilities.
+    - Implement [user-defined routes (UDR)](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview#custom-routes) and a [Network Virtual Appliance](https://azure.microsoft.com/en-in/solutions/network-appliances/) to regulate traffic.
+
 - If using RDP to log into the VM on your local computer, you will need to create a Network Security Group rule to allow inbound traffic on Port 3389. This exposes your VM to the public. To connect to your VM using a more secure method, use [Azure Bastion](https://learn.microsoft.com/en-us/azure/bastion/bastion-overview).
 - You may set up further [security and stability measures on the VM](https://learn.microsoft.com/en-us/azure/virtual-machines/security-recommendations), including configuring Azure Backup, installing an endpoint protection solution on the VM, and encrypting disks.
 - Note that this sample codebase uses a self-signed public certificate - these certificates work well for testing in place of a CA-signed certificate. [Self-signed public certificate are not trusted by default, can be difficult to maintain, and may use outdated hash and cipher suites that may not be strong. Purchasing and using a certificate signed by a well-known certificate authority is the recommended practice outside of testing environments](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-self-signed-certificate).
+
+## Additional Considerations
+- While the general premise will be compatible no matter which framework you use, the details of _"Publishing the Application"_ may differ slightly if a framework other than ASP.NET is chosen.
 
 ## Resources
 - [Set up IIS on Windows Virtual Machine](https://devblogs.microsoft.com/premier-developer/set-up-iis-on-windows-virtual-machine/)
